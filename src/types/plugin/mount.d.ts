@@ -1,6 +1,6 @@
 // @ts-ignore
 import CloudlinkClient from "@williamhorning/cloudlink";
-import { useAPI } from "../lib/api";
+import { useAPI } from "../lib/api/index";
 import { ReactElement } from "react";
 export interface RoarerData {
     cloudlink: CloudlinkClient | null;
