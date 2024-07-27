@@ -1,6 +1,5 @@
-// @ts-ignore
 import CloudlinkClient from "@williamhorning/cloudlink";
-import type { useAPI } from "../lib/api/index";
+import { useAPI } from "../lib/api";
 import { ReactElement } from "react";
 export interface RoarerData {
     cloudlink: CloudlinkClient | null;
@@ -17,15 +16,15 @@ export declare abstract class RoarerPlugin {
         website?: string;
         icon?: string;
     };
-    abstract start(): void | Promise<void>;
+    abstract start(state: object): void | Promise<void>;
     abstract stop(): void | Promise<void>;
-    abstract settings(): ReactElement | Promise<ReactElement>;
+    abstract settings(state: React.ComponentState): ReactElement | Promise<ReactElement>;
 }
 export declare class Plugins {
     private plugins;
     data: RoarerData;
     constructor();
-    flip(identifier: string): Promise<void>;
+    flip(identifier: string, state: object): Promise<void>;
     register(plugin: RoarerPlugin): void;
     create(obj: Code | URL): Promise<void>;
 }

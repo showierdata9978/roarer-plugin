@@ -28,7 +28,6 @@ export type Post = z.infer<typeof POST_SCHEMA> & {
     optimistic?: {
         error?: string;
     };
-    bridge?: "discord";
 };
 export declare const POST_SCHEMA: z.ZodObject<{
     attachments: z.ZodArray<z.ZodObject<{

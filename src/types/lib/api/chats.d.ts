@@ -8,20 +8,26 @@ export declare const CHAT_SCHEMA: z.ZodIntersection<z.ZodObject<{
     members: z.ZodArray<z.ZodString, "many">;
     type: z.ZodNumber;
     _id: z.ZodString;
+    icon: z.ZodOptional<z.ZodString>;
+    icon_color: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     type?: number;
+    icon?: string;
     _id?: string;
     created?: number;
     deleted?: false;
     last_active?: number;
     members?: string[];
+    icon_color?: string;
 }, {
     type?: number;
+    icon?: string;
     _id?: string;
     created?: number;
     deleted?: false;
     last_active?: number;
     members?: string[];
+    icon_color?: string;
 }>, z.ZodUnion<[z.ZodObject<{
     nickname: z.ZodNullable<z.ZodString>;
     owner: z.ZodString;

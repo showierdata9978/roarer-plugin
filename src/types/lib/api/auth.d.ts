@@ -13,10 +13,13 @@ export type AuthSlice = {
     storeAccount: (username: string, token: string) => void;
     removeStoredAccount: (username: string) => void;
     logIn: (username: string, password: string, options: {
-        signUp: boolean;
-        keepLoggedIn: boolean;
         storeAccount: boolean;
-    }) => Promise<{
+    } & ({
+        signUp: false;
+    } | {
+        signUp: true;
+        captcha: string;
+    })) => Promise<{
         error: true;
         message: string;
     } | {

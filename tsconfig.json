@@ -34,7 +34,6 @@
 		"allowSyntheticDefaultImports": true,
 	},
 	"include": [
-		"typings/**/*",
 		"src/**/*"
 	]
 }

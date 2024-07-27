@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "prepublish": "npm run build",
-    "rebuild:types": "rm -rf src/types/ && cd ../roarer-2 && tsc --declaration --declarationDir ./types/ --outDir temp src/plugin/init.tsx && mv types ../roarer-plugin  "
+    "rebuild:types": "bash ./scripts/rebuild_types.sh"
   },
   "keywords": [],
   "author": "",

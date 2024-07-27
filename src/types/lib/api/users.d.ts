@@ -48,6 +48,8 @@ export type User = z.infer<typeof USER_SCHEMA>;
 export type UsersSlice = {
     users: Record<string, Errorable<User>>;
     addUser: (user: User) => void;
-    loadUser: (username: string) => Promise<void>;
+    loadUser: (username: string, options?: {
+        force?: boolean;
+    }) => Promise<void>;
 };
 export declare const createUsersSlice: Slice<UsersSlice>;
